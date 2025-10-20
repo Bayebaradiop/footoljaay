@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOTOLJAY - Thème Océan 🌊</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 🌊 Variables CSS - Palette Bleu Océan & Cyan */
+        :root {
+            /* Couleurs principales */
+            --primary-color: hsl(200, 95%, 45%);        /* #0396D6 - Bleu océan vif */
+            --primary-hover: hsl(200, 95%, 40%);        /* #0284BF - Bleu océan foncé */
+            --secondary-color: hsl(180, 95%, 55%);      /* #05F5F5 - Cyan lumineux */
+            --secondary-hover: hsl(180, 80%, 50%);      /* #19CCCC - Teal */
+            
+            /* Arrière-plans */
+            --background-light: hsl(210, 40%, 98%);     /* #F7FAFC */
+            --background-card: hsl(0, 0%, 100%);        /* #FFFFFF */
+            
+            /* Textes */
+            --text-foreground: hsl(215, 25%, 15%);      /* #1E2A36 */
+            --text-muted: hsl(215, 15%, 45%);           /* #616E7C */
+            
+            /* Sidebar (mode sombre) */
+            --sidebar-bg: hsl(215, 30%, 12%);           /* #151D28 */
+            --sidebar-active: hsl(200, 95%, 45%);       /* #0396D6 */
+            
+            /* Bordures */
+            --border-color: hsl(214, 25%, 88%);         /* #DFE3E8 */
+            
+            /* Effets lumineux (glow) */
+            --glow-primary: 0 0 40px hsl(200 95% 45% / 0.3);
+            --glow-secondary: 0 0 40px hsl(180 95% 55% / 0.4);
+            --glow-hover: 0 0 60px hsl(200 95% 45% / 0.5);
+            
+            /* Dégradés */
+            --gradient-primary: linear-gradient(135deg, hsl(200, 95%, 45%) 0%, hsl(180, 95%, 55%) 100%);
+            --gradient-hero: linear-gradient(135deg, hsl(200, 95%, 45%) 0%, hsl(180, 95%, 55%) 50%, hsl(200, 95%, 45%) 100%);
+            
+            /* Sémantiques */
+            --success-color: #10B981;
+            --danger-color: #EF4444;
+            --warning-color: #F59E0B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background-light);
+            color: var(--text-foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Hero avec animation gradient */
+        .hero {
+            background: var(--gradient-hero);
+            background-size: 200% 100%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 1.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Palette de couleurs */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .color-box {
+            padding: 3rem 1.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .color-box:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .color-primary { 
+            background: var(--primary-color); 
+            box-shadow: var(--glow-primary);
+        }
+        
+        .color-primary:hover {
+            box-shadow: var(--glow-hover);
+        }
+        
+        .color-secondary { 
+            background: var(--secondary-color);
+            box-shadow: var(--glow-secondary);
+        }
+        
+        .color-dark { 
+            background: var(--sidebar-bg); 
+        }
+        
+        .color-code {
+            display: block;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Boutons avec effets glow */
+        .buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+        
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow-hover);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+        
+        .btn-glow {
+            background: var(--secondary-color);
+            color: var(--sidebar-bg);
+            box-shadow: var(--glow-secondary);
+        }
+        
+        .btn-glow:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 80px hsl(180 95% 55% / 0.6);
+        }
+        
+        /* Cards avec effets */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--background-card);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--glow-primary);
+            border-color: var(--primary-color);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--text-foreground);
+        }
+        
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-vip {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: white;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+        
+        .badge-approved {
+            background: #D1FAE5;
+            color: var(--success-color);
+        }
+        
+        .badge-new {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+        
+        /* Sidebar Preview */
+        .sidebar-preview {
+            background: var(--sidebar-bg);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .sidebar-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .sidebar-link.active {
+            background: var(--sidebar-active);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+        
+        .sidebar-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow-primary);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-foreground);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--gradient-hero);
+            background-size: 200% 100%;
+            animation: gradientShift 8s ease infinite;
+            border-radius: 1.5rem;
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        .footer-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .footer-cta p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>🌊 FOTOLJAY - Thème Océan</h1>
+                <p class="hero-subtitle">Design moderne avec palette Bleu Océan & Cyan lumineux</p>
+            </div>
+        </div>
+        
+        <!-- Palette de Couleurs -->
+        <h2 class="section-title">🎨 Palette de Couleurs</h2>
+        <div class="colors-grid">
+            <div class="color-box color-primary">
+                Bleu Océan (Primary)
+                <span class="color-code">hsl(200, 95%, 45%)</span>
+                <span class="color-code">#0396D6</span>
+            </div>
+            <div class="color-box color-secondary">
+                Cyan Lumineux (Secondary)
+                <span class="color-code">hsl(180, 95%, 55%)</span>
+                <span class="color-code">#05F5F5</span>
+            </div>
+            <div class="color-box color-dark">
+                Sidebar Dark
+                <span class="color-code">hsl(215, 30%, 12%)</span>
+                <span class="color-code">#151D28</span>
+            </div>
+        </div>
+        
+        <!-- Boutons -->
+        <h2 class="section-title">🔘 Boutons avec Effets Glow</h2>
+        <div class="buttons-grid">
+            <button class="btn btn-primary">Publier une annonce</button>
+            <button class="btn btn-secondary">En savoir plus</button>
+            <button class="btn btn-glow">Passer VIP ✨</button>
+        </div>
+        
+        <!-- Stats Cards -->
+        <h2 class="section-title">📊 Statistiques Dashboard</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    📦
+                </div>
+                <div>
+                    <div class="stat-value">347</div>
+                    <div class="stat-label">Produits Actifs</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    👁
+                </div>
+                <div>
+                    <div class="stat-value">12.4K</div>
+                    <div class="stat-label">Vues Totales</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    💰
+                </div>
+                <div>
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">Ventes</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Preview -->
+        <h2 class="section-title">📱 Sidebar (Mode Sombre)</h2>
+        <div class="sidebar-preview">
+            <a href="#" class="sidebar-link active">
+                <span class="sidebar-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="sidebar-icon">📦</span>
+                <span>Mes Produits</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="sidebar-icon">📊</span>
+                <span>Statistiques</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="sidebar-icon">⚙️</span>
+                <span>Paramètres</span>
+            </a>
+        </div>
+        
+        <!-- Product Cards -->
+        <h2 class="section-title">🛍️ Cards de Produits</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-image">
+                    📱
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">iPhone 14 Pro Max 256GB</h3>
+                    <p class="card-description">Excellent état, utilisé 6 mois. Avec boîte et chargeur d'origine. Débloqué tous opérateurs.</p>
+                    <div class="card-footer">
+                        <span class="badge badge-new">Nouveau</span>
+                        <span style="color: var(--text-muted); font-weight: 600;">245 vues</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    🚗
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Toyota Corolla 2019</h3>
+                    <p class="card-description">Automatique, première main, très bon état. 45,000 km. Carnet d'entretien à jour.</p>
+                    <div class="card-footer">
+                        <span class="badge badge-approved">Approuvé</span>
+                        <span style="color: var(--text-muted); font-weight: 600;">189 vues</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    🏠
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Appartement F4 - Almadies</h3>
+                    <p class="card-description">Meublé, vue mer, 3 chambres, parking sécurisé. Disponible immédiatement.</p>
+                    <div class="card-footer">
+                        <span class="badge badge-vip">VIP</span>
+                        <span class="badge badge-new">Nouveau</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer CTA -->
+        <div class="footer-cta">
+            <h2>✨ Design Océan & Cyan</h2>
+            <p>Palette moderne • Effets lumineux • Animations fluides</p>
+            <button class="btn btn-secondary" style="background: white; color: var(--primary-color); border: none;">
+                Découvrir FOTOLJAY
+            </button>
+        </div>
+    </div>
+</body>
+</html>

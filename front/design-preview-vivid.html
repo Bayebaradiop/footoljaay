@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOTOLJAY VIVID - Design Preview</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Iconic Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="./src/fotoljay-vivid.css">
+    
+    <style>
+        /* Styles supplémentaires pour la démo seulement */
+        .demo-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .demo-title {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .color-sample {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .color-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 0.75rem;
+        }
+        
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .color-value {
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--neutral-500);
+        }
+        
+        .toggle-dark {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--neutral-800);
+            color: var(--neutral-100);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+        
+        .dark .toggle-dark {
+            background: var(--neutral-100);
+            color: var(--neutral-800);
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-dark" onclick="document.body.classList.toggle('dark');">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+    
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-logo">
+                <i class="bi bi-camera-fill text-primary"></i>
+                FOTOLJAY
+            </a>
+            
+            <nav class="navbar-menu">
+                <a href="#" class="navbar-menu-item active">Accueil</a>
+                <a href="#" class="navbar-menu-item">Catégories</a>
+                <a href="#" class="navbar-menu-item">Premium</a>
+                <a href="#" class="navbar-menu-item">Espace vendeur</a>
+            </nav>
+            
+            <div class="navbar-right">
+                <a href="#" class="btn btn-ghost btn-icon-only">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="#" class="btn btn-ghost btn-icon-only">
+                    <i class="bi bi-bell"></i>
+                </a>
+                <a href="#" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i>
+                    Publier
+                </a>
+            </div>
+            
+            <button class="navbar-toggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Vos annonces prennent vie avec FOTOLJAY VIVID</h1>
+            <p class="hero-subtitle">La meilleure plateforme pour acheter et vendre en toute simplicité avec un design moderne et intuitif.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-secondary">
+                    Découvrir les annonces
+                </a>
+                <a href="#" class="btn btn-glow">
+                    Créer un compte VIP
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="text-3xl mb-8">Annonces à la une</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Carte produit 1 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1485965373059-f7c1c5e72cfd" class="card-img" alt="iPhone 14 Pro Max">
+                        <span class="card-badge badge-vip">VIP</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">iPhone 14 Pro Max - Comme neuf</h3>
+                        <p class="card-description">Superbe iPhone 14 Pro Max 256Go. Aucune rayure, débloqué tout opérateur. Livré avec chargeur et boîte d'origine.</p>
+                        <div class="card-price">750 000 FCFA</div>
+                        <div class="card-footer">
+                            <span class="card-status status-approved">Approuvé</span>
+                            <span class="card-views">
+                                <i class="bi bi-eye"></i>
+                                145 vues
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carte produit 2 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d6a6c1" class="card-img" alt="Appartement">
+                        <span class="card-badge badge-featured">Recommandé</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Appartement meublé 3 pièces - Almadies</h3>
+                        <p class="card-description">Bel appartement meublé avec 2 chambres, salon, cuisine équipée. Proche de la plage, sécurité 24/7.</p>
+                        <div class="card-price">450 000 FCFA/mois</div>
+                        <div class="card-footer">
+                            <span class="card-status status-approved">Approuvé</span>
+                            <span class="card-views">
+                                <i class="bi bi-eye"></i>
+                                87 vues
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carte produit 3 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a" class="card-img" alt="Voiture">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Toyota Corolla 2022 - Automatique</h3>
+                        <p class="card-description">Toyota Corolla modèle 2022, boîte automatique, climatisation, 12 000 km seulement. État impeccable.</p>
+                        <div class="card-price">12 500 000 FCFA</div>
+                        <div class="card-footer">
+                            <span class="card-status status-pending">En attente</span>
+                            <span class="card-views">
+                                <i class="bi bi-eye"></i>
+                                36 vues
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8">
+                <a href="#" class="btn btn-outline">Voir plus d'annonces</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background-color: var(--neutral-100);">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl mb-4">Comment vendre sur FOTOLJAY</h2>
+                    <p class="mb-6">Créez votre compte, publiez votre annonce, et entrez en contact avec des acheteurs potentiels en quelques clics seulement.</p>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center bg-primary rounded-full text-white font-bold w-10 h-10">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Créez votre compte</h4>
+                            <p class="text-neutral-600">Inscrivez-vous gratuitement en quelques secondes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center bg-primary rounded-full text-white font-bold w-10 h-10">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Publiez votre annonce</h4>
+                            <p class="text-neutral-600">Ajoutez photos et description détaillée</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center justify-center bg-primary rounded-full text-white font-bold w-10 h-10">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Vendez rapidement</h4>
+                            <p class="text-neutral-600">Échangez avec les acheteurs via notre messagerie</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary">Commencer maintenant</a>
+                </div>
+                
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd" alt="Mobile app" class="rounded-2xl shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="text-3xl text-center mb-2">Explorez nos catégories</h2>
+            <p class="text-center text-neutral-600 mb-8">Trouvez exactement ce que vous cherchez parmi nos catégories populaires</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-phone text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Téléphones</h3>
+                        <p class="text-sm text-neutral-500">1,245 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-car-front text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Véhicules</h3>
+                        <p class="text-sm text-neutral-500">876 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-house-door text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Immobilier</h3>
+                        <p class="text-sm text-neutral-500">1,542 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-laptop text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Informatique</h3>
+                        <p class="text-sm text-neutral-500">954 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-tv text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Électronique</h3>
+                        <p class="text-sm text-neutral-500">752 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-gem text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Mode & Beauté</h3>
+                        <p class="text-sm text-neutral-500">1,865 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-briefcase text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Emplois</h3>
+                        <p class="text-sm text-neutral-500">423 annonces</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-three-dots text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-bold">Autres</h3>
+                        <p class="text-sm text-neutral-500">2,148 annonces</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background: var(--gradient-primary); color: white;">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Devenez vendeur premium</h2>
+            <p class="text-xl mb-8">Profitez d'une visibilité maximale et d'avantages exclusifs</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-star-fill text-4xl text-warning mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Visibilité accrue</h3>
+                        <p>Vos annonces apparaissent en première page et sont mises en avant</p>
+                    </div>
+                </div>
+                
+                <div class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-lightning-charge-fill text-4xl text-warning mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Validation prioritaire</h3>
+                        <p>Vos annonces sont validées en priorité sous 2 heures</p>
+                    </div>
+                </div>
+                
+                <div class="card card-glass">
+                    <div class="p-6 text-center">
+                        <i class="bi bi-graph-up-arrow text-4xl text-warning mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Statistiques avancées</h3>
+                        <p>Suivez les performances de vos annonces en temps réel</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-glow mt-8">Devenir Premium</a>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="demo-title">Démonstration des composants UI</h2>
+            
+            <!-- BOUTONS -->
+            <div class="demo-section">
+                <h3 class="mb-4">Boutons</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-primary">Bouton Primary</button>
+                    <button class="btn btn-secondary">Bouton Secondary</button>
+                    <button class="btn btn-accent">Bouton Accent</button>
+                    <button class="btn btn-outline">Bouton Outline</button>
+                    <button class="btn btn-ghost">Bouton Ghost</button>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button class="btn btn-success">Bouton Success</button>
+                    <button class="btn btn-danger">Bouton Danger</button>
+                    <button class="btn btn-glow">Bouton Glow</button>
+                    <button class="btn btn-primary btn-sm">Petit Bouton</button>
+                    <button class="btn btn-primary btn-lg">Grand Bouton</button>
+                </div>
+            </div>
+            
+            <!-- BADGES -->
+            <div class="demo-section">
+                <h3 class="mb-4">Badges</h3>
+                <div class="flex flex-wrap gap-4">
+                    <span class="badge badge-primary">Badge Primary</span>
+                    <span class="badge badge-accent">Badge Accent</span>
+                    <span class="badge badge-success">Badge Success</span>
+                    <span class="badge badge-warning">Badge Warning</span>
+                    <span class="badge badge-danger">Badge Danger</span>
+                </div>
+            </div>
+            
+            <!-- ALERTS -->
+            <div class="demo-section">
+                <h3 class="mb-4">Alertes</h3>
+                <div class="space-y-4">
+                    <div class="alert alert-success">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <div>
+                            <strong>Succès!</strong> Votre annonce a été publiée avec succès.
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <div>
+                            <strong>Attention!</strong> Votre annonce est en attente de validation.
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-danger">
+                        <i class="bi bi-x-circle-fill"></i>
+                        <div>
+                            <strong>Erreur!</strong> Une erreur est survenue lors de la publication.
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <div>
+                            <strong>Info!</strong> N'oubliez pas de vérifier vos messages.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FORMULAIRES -->
+            <div class="demo-section">
+                <h3 class="mb-4">Formulaires</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="form-control">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input id="name" type="text" class="form-input" placeholder="Votre nom">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" type="email" class="form-input" placeholder="votre@email.com">
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input id="password" type="password" class="form-input" placeholder="********">
+                        </div>
+                        
+                        <div class="form-control">
+                            <div class="form-check">
+                                <input id="terms" type="checkbox" class="form-check-input">
+                                <label for="terms" class="form-check-label">J'accepte les conditions d'utilisation</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="form-control">
+                            <label for="category" class="form-label">Catégorie</label>
+                            <select id="category" class="form-select">
+                                <option value="">Sélectionnez une catégorie</option>
+                                <option value="phones">Téléphones</option>
+                                <option value="cars">Véhicules</option>
+                                <option value="real-estate">Immobilier</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" class="form-textarea" placeholder="Description détaillée"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PALETTE DE COULEURS -->
+            <div class="demo-section">
+                <h3 class="mb-6">Palette de Couleurs</h3>
+                
+                <h4 class="mb-4">Couleurs principales</h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--primary);"></div>
+                        <div class="color-name">Primary</div>
+                        <div class="color-value">#FF0080</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--primary-hover);"></div>
+                        <div class="color-name">Primary Hover</div>
+                        <div class="color-value">#E6007A</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--primary-light);"></div>
+                        <div class="color-name">Primary Light</div>
+                        <div class="color-value">#FFE5F2</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--accent);"></div>
+                        <div class="color-name">Accent</div>
+                        <div class="color-value">#7C4DFF</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--accent-hover);"></div>
+                        <div class="color-name">Accent Hover</div>
+                        <div class="color-value">#6F45E6</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--accent-light);"></div>
+                        <div class="color-name">Accent Light</div>
+                        <div class="color-value">#F5F0FF</div>
+                    </div>
+                </div>
+                
+                <h4 class="mb-4">Couleurs sémantiques</h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--success);"></div>
+                        <div class="color-name">Success</div>
+                        <div class="color-value">#00C896</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--warning);"></div>
+                        <div class="color-name">Warning</div>
+                        <div class="color-value">#FFC229</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--danger);"></div>
+                        <div class="color-name">Danger</div>
+                        <div class="color-value">#FF4D6B</div>
+                    </div>
+                    
+                    <div class="color-sample">
+                        <div class="color-circle" style="background: var(--info);"></div>
+                        <div class="color-name">Info</div>
+                        <div class="color-value">#33B2FF</div>
+                    </div>
+                </div>
+                
+                <h4 class="mb-4">Dégradés</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-8 rounded-xl text-center text-white font-bold" style="background: var(--gradient-primary);">
+                        Gradient Primary
+                    </div>
+                    <div class="p-8 rounded-xl text-center text-white font-bold" style="background: var(--gradient-accent);">
+                        Gradient Accent
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="section" style="background-color: var(--neutral-800); color: white;">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="navbar-logo mb-4">
+                        <i class="bi bi-camera-fill text-primary"></i>
+                        FOTOLJAY
+                    </a>
+                    <p class="text-neutral-400">La plateforme #1 de petites annonces au Sénégal. Achetez et vendez facilement.</p>
+                    
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-neutral-400 hover:text-primary">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-primary">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-primary">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-primary">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Accueil</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Catégories</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Premium</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Assistance</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Aide</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Signaler un abus</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Politique de cookies</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-700 mt-8 pt-8 text-center text-neutral-400">
+                <p>© 2025 FOTOLJAY. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Dark mode toggle
+        const toggleDark = document.querySelector('.toggle-dark');
+        toggleDark.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('dark')) {
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+            } else {
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+            }
+        });
+    </script>
+</body>
+</html>

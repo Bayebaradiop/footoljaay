@@ -1,0 +1,433 @@
+/* 🏆 FOTOLJAY - STYLES GLOBAUX PREMIUM */
+
+/* Import du système de design premium */
+@import './styles-premium.css';
+
+/* ========================= STYLES GLOBAUX ========================= */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base pour rem calculations */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--gradient-page-bg);
+  color: var(--black-700);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========================= TYPOGRAPHIE AMÉLIORÉE ========================= */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--font-semibold);
+  color: var(--black-800);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+h1 { 
+  font-size: var(--text-4xl); 
+  font-weight: var(--font-bold);
+  color: var(--black-900);
+}
+
+h2 { 
+  font-size: var(--text-3xl); 
+  font-weight: var(--font-semibold);
+}
+
+h3 { 
+  font-size: var(--text-2xl); 
+}
+
+h4 { 
+  font-size: var(--text-xl); 
+}
+
+h5 { 
+  font-size: var(--text-lg); 
+}
+
+h6 { 
+  font-size: var(--text-base); 
+  font-weight: var(--font-medium);
+}
+
+p {
+  margin: 0;
+  color: var(--black-700);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+/* ========================= LIENS PREMIUM ========================= */
+
+a {
+  color: var(--gold-600);
+  text-decoration: none;
+  transition: var(--transition-normal);
+  font-weight: var(--font-medium);
+}
+
+a:hover {
+  color: var(--gold-700);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ========================= BOUTONS PREMIUM GLOBAUX ========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+/* Bouton primaire OR */
+.btn-primary {
+  background: var(--gradient-gold-primary);
+  color: var(--white);
+  box-shadow: var(--shadow-gold-medium);
+  font-weight: var(--font-semibold);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--gradient-gold-reverse);
+  box-shadow: var(--shadow-gold-large);
+  transform: translateY(-1px);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-gold-soft);
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+  background: var(--white);
+  color: var(--gold-600);
+  border: var(--border-medium) solid var(--gold-300);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--gold-50);
+  border-color: var(--gold-500);
+  color: var(--gold-700);
+  box-shadow: var(--shadow-medium);
+  text-decoration: none;
+}
+
+/* Bouton outline */
+.btn-outline {
+  background: transparent;
+  color: var(--gold-600);
+  border: var(--border-thin) solid var(--gold-400);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--gold-500);
+  color: var(--white);
+  border-color: var(--gold-500);
+  text-decoration: none;
+}
+
+/* Bouton ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--gold-600);
+  border: none;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--gold-100);
+  color: var(--gold-700);
+  text-decoration: none;
+}
+
+/* Tailles des boutons */
+.btn-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+}
+
+.btn-xl {
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+}
+
+/* ========================= CARTES PREMIUM ========================= */
+
+.card {
+  background: var(--gradient-card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-medium);
+  border: var(--border-thin) solid var(--gold-200);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-large);
+  transform: translateY(-2px);
+  border-color: var(--gold-300);
+}
+
+.card-header {
+  padding: var(--spacing-xl);
+  border-bottom: var(--border-thin) solid var(--gold-200);
+  background: var(--gradient-gold-subtle);
+}
+
+.card-body {
+  padding: var(--spacing-xl);
+}
+
+.card-footer {
+  padding: var(--spacing-xl);
+  border-top: var(--border-thin) solid var(--gold-200);
+  background: var(--gold-50);
+}
+
+/* ========================= FORMULAIRES PREMIUM ========================= */
+
+.form-group {
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--black-700);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--leading-normal);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: var(--border-medium) solid var(--gold-300);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  font-size: var(--text-base);
+  color: var(--black-700);
+  transition: var(--transition-normal);
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+  background: var(--white);
+}
+
+.form-input::placeholder {
+  color: var(--black-400);
+  font-weight: var(--font-normal);
+}
+
+.form-input:disabled {
+  background: var(--black-100);
+  color: var(--black-500);
+  cursor: not-allowed;
+}
+
+/* ========================= UTILITAIRES PREMIUM ========================= */
+
+/* Conteneurs */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+  .container { max-width: 640px; }
+}
+
+@media (min-width: 768px) {
+  .container { 
+    max-width: 768px; 
+    padding: 0 var(--spacing-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container { 
+    max-width: 1024px; 
+    padding: 0 var(--spacing-3xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container { 
+    max-width: 1280px; 
+  }
+}
+
+@media (min-width: 1536px) {
+  .container { 
+    max-width: 1536px; 
+  }
+}
+
+/* Texte centré */
+.text-center { text-align: center; }
+
+/* Flex utilitaires */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Grid */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Gap */
+.gap-4 { gap: var(--spacing-lg); }
+.gap-6 { gap: var(--spacing-2xl); }
+.gap-8 { gap: var(--spacing-3xl); }
+
+/* Marges et paddings */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-6 { margin-bottom: var(--spacing-2xl); }
+.mt-8 { margin-top: var(--spacing-3xl); }
+
+/* Largeurs */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* ========================= LOADING ET ÉTATS ========================= */
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--gold-200);
+  border-radius: 50%;
+  border-top-color: var(--gold-500);
+  animation: var(--animation-spin);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--gold-100) 25%, var(--gold-200) 50%, var(--gold-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ========================= RESPONSIVE PREMIUM ========================= */
+
+/* Mobile first - lisibilité optimale */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+}
+
+/* Tablette et plus */
+@media (min-width: 768px) {
+  .grid-md-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-md-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Desktop et plus */
+@media (min-width: 1024px) {
+  .grid-lg-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-lg-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ========================= ACCESSIBILITÉ ========================= */
+
+/* Focus visible pour navigation clavier */
+*:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+/* Réduction mouvement pour utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Amélioration contraste pour malvoyants */
+@media (prefers-contrast: high) {
+  :root {
+    --gold-500: #b45309;
+    --black-700: #000000;
+    --white: #ffffff;
+  }
+}
+
+/* Mode sombre automatique */
+@media (prefers-color-scheme: dark) {
+  /* À implémenter si nécessaire */
+}

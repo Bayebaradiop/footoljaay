@@ -1,0 +1,372 @@
+/* ========================= SYSTÈME DE DESIGN PREMIUM OR ========================= */
+/* Fichier de variables et de styles de base à importer dans tous les composants */
+
+:root {
+  /* Palette de couleurs Or & Blanc */
+  --gold-primary: #f6c543;
+  --gold-dark: #b8860b;
+  --gold-light: #f9e4a7;
+  --gold-lighter: #fef9e7;
+  --bg-light: #fffdf8;
+  --white: #ffffff;
+  
+  /* Textes */
+  --text-dark: #1a1a1a;
+  --text-medium: #4a4a4a;
+  --text-light: #6a6a6a;
+  
+  /* Effets et ombres */
+  --shadow-gold-sm: 0 4px 12px rgba(233, 184, 36, 0.1);
+  --shadow-gold: 0 8px 32px rgba(233, 184, 36, 0.2);
+  --shadow-gold-lg: 0 12px 48px rgba(233, 184, 36, 0.3);
+  --border-gold-light: 1px solid rgba(246, 197, 67, 0.3);
+  --border-gold-medium: 1px solid rgba(246, 197, 67, 0.5);
+  
+  /* États spécifiques */
+  --success-gradient: linear-gradient(135deg, #a3d977, #66bb6a);
+  --pending-gradient: linear-gradient(135deg, #f8d46a, #d1a23c);
+  --danger-gradient: linear-gradient(135deg, #e63946, #b91c1c);
+  
+  /* Dégradés */
+  --gold-gradient: linear-gradient(135deg, #f6c543, #b8860b);
+  --gold-gradient-reverse: linear-gradient(135deg, #b8860b, #f6c543);
+  --gold-gradient-text: linear-gradient(135deg, #b8860b, #f6c543);
+  --glass-background: rgba(255, 255, 255, 0.95);
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-lg: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 2.5rem;
+  --spacing-4xl: 3rem;
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Arrondis */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-modal: 1030;
+  --z-tooltip: 1040;
+}
+
+/* ========================= ÉLÉMENTS DE BASE ========================= */
+
+/* Boutons Premium Or */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: var(--transition-slow);
+  z-index: 1;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+.btn-premium > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Bouton Primaire OR */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: white;
+  box-shadow: var(--shadow-gold-sm);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-gold:hover {
+  background: var(--gold-gradient-reverse);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(255, 215, 0, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-gold:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Bouton Secondaire OR */
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-primary);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-lighter);
+  color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+  text-decoration: none;
+}
+
+/* Cartes Premium */
+.card-premium {
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: var(--border-gold-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold-sm);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.card-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(246, 197, 67, 0.5);
+}
+
+/* Badges d'état */
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-success {
+  background: var(--success-gradient);
+  color: white;
+}
+
+.badge-pending {
+  background: var(--pending-gradient);
+  color: white;
+}
+
+.badge-danger {
+  background: var(--danger-gradient);
+  color: white;
+}
+
+/* Formulaires Premium */
+.form-control-premium {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(246, 197, 67, 0.3);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  background: white;
+  width: 100%;
+}
+
+.form-control-premium:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(246, 197, 67, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Labels Premium */
+.form-label-premium {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.01em;
+}
+
+/* Titres Premiums */
+.title-premium {
+  font-weight: 700;
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Tables Premium */
+.table-premium {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.table-premium th {
+  background: var(--gold-gradient);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(246, 197, 67, 0.3);
+}
+
+.table-premium td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(246, 197, 67, 0.1);
+  background: var(--glass-background);
+}
+
+.table-premium tr:last-child td {
+  border-bottom: none;
+}
+
+.table-premium tr:hover td {
+  background: var(--gold-lighter);
+}
+
+/* Modales Premium */
+.modal-premium {
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-2xl);
+  border: var(--border-gold-light);
+  box-shadow: var(--shadow-gold-lg);
+  max-width: 90vw;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header-premium {
+  border-bottom: var(--border-gold-light);
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-title-premium {
+  font-weight: 700;
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-footer-premium {
+  border-top: var(--border-gold-light);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Navigation Premium */
+.navbar-premium {
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-gold-light);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.navbar-brand-premium {
+  font-weight: 700;
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link-premium {
+  color: var(--text-medium);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+}
+
+.nav-link-premium:hover,
+.nav-link-premium.active {
+  background: var(--gold-lighter);
+  color: var(--gold-dark);
+}
+
+/* ========================= UTILS ========================= */
+
+/* Gold Text */
+.gold-text {
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold Borders */
+.gold-border {
+  border: var(--border-gold-light);
+}
+
+/* Glass Effect */
+.glass-bg {
+  background: var(--glass-background);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gold Shadows */
+.gold-shadow {
+  box-shadow: var(--shadow-gold);
+}
+
+.gold-shadow-sm {
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.gold-shadow-lg {
+  box-shadow: var(--shadow-gold-lg);
+}
